@@ -178,8 +178,8 @@ module FastAPI
       end
 
       offset = filters.delete(:__offset).try(:to_i) || 0
-      cnt    = filters.delete(:__count).try(:to_i) || 500
-      count  = clamp(cnt, 1, 500)
+      cnt    = filters.delete(:__count).try(:to_i) || 1000
+      count  = clamp(cnt, 1, 1000)
 
       begin
         parsed_filters = parse_filters(filters, safe)
